@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "67bo2+miKAeJfTk9TbjBFe5T1xmzPeCgmMfKfnKHvH0=",
+  "Source": "TeslaACDC.API",
+  "BasePath": "_content/TeslaACDC.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

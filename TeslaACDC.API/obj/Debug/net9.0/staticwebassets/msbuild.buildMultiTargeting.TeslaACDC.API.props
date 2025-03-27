@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\TeslaACDC.API.props" />
+</Project>

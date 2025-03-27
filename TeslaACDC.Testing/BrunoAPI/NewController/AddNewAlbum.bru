@@ -1,0 +1,21 @@
+meta {
+  name: AddNewAlbum
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:5204/api/New/AddAlbum
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "A Night at the Opera",
+    "year": 1975,
+    "genre": "Rock",
+    "artistId": 1
+  }
+  
+}
