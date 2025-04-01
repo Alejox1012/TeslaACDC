@@ -8,5 +8,6 @@ namespace TeslaACDC.Data.IRepository;
     {
     Task addAsync(TEntity album);
     Task<TEntity> FindAsync(Tid id);
+    
     }
 

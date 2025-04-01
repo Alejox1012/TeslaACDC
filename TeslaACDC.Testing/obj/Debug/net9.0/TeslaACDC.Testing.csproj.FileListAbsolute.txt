@@ -193,3 +193,4 @@ C:\ProyectosTesla\TeslaACDC\TeslaACDC.Testing\obj\Debug\net9.0\TeslaACDC.Testing
 C:\ProyectosTesla\TeslaACDC\TeslaACDC.Testing\obj\Debug\net9.0\TeslaACD.10531984.Up2Date
 C:\ProyectosTesla\TeslaACDC\TeslaACDC.Testing\obj\Debug\net9.0\TeslaACDC.Testing.genruntimeconfig.cache
 C:\ProyectosTesla\TeslaACDC\TeslaACDC.Testing\bin\Debug\net9.0\Moq.dll
+C:\ProyectosTesla\TeslaACDC\TeslaACDC.Testing\obj\Debug\net9.0\TeslaACDC.Testing.sourcelink.json

@@ -5,7 +5,17 @@ meta {
 }
 
 post {
-  url: http://localhost:5204/api/New/AddNewArtist
-  body: none
+  url: http://localhost:5204/api/New/AddArtist
+  body: json
   auth: none
+}
+
+body:json {
+  {
+    "name": "John Doe",
+    "country": "USA",
+    "isOnTour": false,
+    "id": 8
+    
+  }
 }

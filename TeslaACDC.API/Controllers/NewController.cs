@@ -1,11 +1,13 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using TeslaACDC.Business.Interfaces;
 using TeslaACDC.Data.Models;
 
 namespace TeslaACDC.API.Controllers;
 
-[Controller]
+[ApiController]
 [Route("api/[controller]")]
+[Authorize]
 public class NewController : ControllerBase
 {
     private readonly IArtistService _artistService;
@@ -20,26 +22,6 @@ public class NewController : ControllerBase
     _trackService = trackService;
     }   
 
-    [HttpGet("GetArtistbyId/{id}")]
-    public async Task<IActionResult> GetArtistById(int id)
-    {
-        var artist = await _artistService.FindArtistById(id);
-        if (artist == null)
-            return NotFound($"No se encontró el artista con ID {id}");
-        
-        return Ok(artist);
-    }
-
-    
-    [HttpPost]
-    [Route("AddArtist")]
-    public async Task<IActionResult> AddArtist([FromBody] Artist artist)
-    {
-        var newArtist = await _artistService.AddArtist(artist);
-        return Ok(newArtist);
-    }
-
-
     [HttpGet("GetAlbumbyId/{id}")]
     public async Task<IActionResult> GetAlbumById(int id)
     {
@@ -49,6 +31,18 @@ public class NewController : ControllerBase
         
         return Ok(album);
     }
+
+
+    [HttpGet("GetbyId/{id}")]
+    public async Task<IActionResult> GetById(int id)
+    {
+        var album = await _albumService.FindById(id);
+        if (album == null)
+            return NotFound($"No se encontró el artista con ID {id}");
+        
+        return Ok(album);
+    }
+
 
     [HttpPost]
     [Route("AddAlbum")]
@@ -75,6 +69,64 @@ public class NewController : ControllerBase
         var newTrack = await _trackService.AddTrack(track);
         return Ok(newTrack);
     }
-    
+
+
+
+
+    //Artista
+
+        //Get By id
+        [HttpGet("GetArtistbyId/{id}")]
+        public async Task<IActionResult> GetArtistById(int id)
+        {
+            var artist = await _artistService.FindArtistById(id);
+            if (artist == null)
+                return NotFound($"No se encontró el artista con ID {id}");
+            
+            return Ok(artist);
+        }
+
+        //add artist
+        [HttpPost]
+        [Route("AddArtist")]
+        public async Task<IActionResult> AddArtist([FromBody] Artist artist)
+        {
+            var response = await _artistService.AddArtist(artist);
+
+            if (response.StatusCode == System.Net.HttpStatusCode.Created)
+            {
+                return CreatedAtAction(nameof(AddArtist), new { id = artist.Id }, response);
+            }
+            return StatusCode((int)response.StatusCode, response);
+        }
+
+        // Search By name
+        [HttpGet]
+        [Route("GetArtistByName")]
+        public async Task<IActionResult> GetByName([FromQuery] string name)
+        {
+            var result = await _artistService.FindArtistByName(name);
+            return StatusCode((int)result.StatusCode, result);
+        }
+
+        // Get Artist List
+        [HttpGet]
+        [Route("GetAllArtists")]
+        public async Task<IActionResult> GetAll()
+        {
+            var result = await _artistService.GetArtistList();
+            return StatusCode((int)result.StatusCode, result);
+        }
+
+        // Filtrar artistas por nombre y país
+        [HttpGet]
+        [Route("FilterArtistByProperties")]
+        public async Task<IActionResult> GetByProperties([FromQuery] string name, [FromQuery] string country)
+        {
+            var result = await _artistService.FindArtistByProperties(name, country);
+            return StatusCode((int)result.StatusCode, result);
+        }
+
+
 
 }

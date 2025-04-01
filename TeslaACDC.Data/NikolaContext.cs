@@ -1,7 +1,8 @@
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using TeslaACDC.Data.Models;
 
-public class NikolaContext : DbContext
+public class NikolaContext : IdentityDbContext<ApplicationUser>
 {
     public NikolaContext(DbContextOptions<NikolaContext> options) : base(options)
     {

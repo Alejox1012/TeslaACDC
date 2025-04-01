@@ -90,6 +90,15 @@ public class AlbumService : IAlbumService
     }
 
 
+    public async Task<BaseMessage<Album>> FindById(int id)
+    {
+        Album? album = new();
+        album = await _albumRepository.FindAsync(id);
+        return album != null ? BuildResponse(new List<Album>(){ album }, "Álbum encontrado", HttpStatusCode.OK, 1) :
+                               BuildResponse(new List<Album>(), "Álbum no encontrado", HttpStatusCode.NotFound, 0);
+    }
+
+
 
     private string ValidateModel(Album album)
     {

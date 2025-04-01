@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\ProyectosTesla\\TeslaACDC\\TeslaACDC.API\\TeslaACDC.API.csproj": {}
+    "C:\\ProyectosTesla\\TeslaACDC\\TeslaACDC.API\\TeslaACDC.API.csproj": {}
   },
   "projects": {
-    "c:\\ProyectosTesla\\TeslaACDC\\TeslaACDC.API\\TeslaACDC.API.csproj": {
+    "C:\\ProyectosTesla\\TeslaACDC\\TeslaACDC.API\\TeslaACDC.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\ProyectosTesla\\TeslaACDC\\TeslaACDC.API\\TeslaACDC.API.csproj",
+        "projectUniqueName": "C:\\ProyectosTesla\\TeslaACDC\\TeslaACDC.API\\TeslaACDC.API.csproj",
         "projectName": "TeslaACDC.API",
-        "projectPath": "c:\\ProyectosTesla\\TeslaACDC\\TeslaACDC.API\\TeslaACDC.API.csproj",
+        "projectPath": "C:\\ProyectosTesla\\TeslaACDC\\TeslaACDC.API\\TeslaACDC.API.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "c:\\ProyectosTesla\\TeslaACDC\\TeslaACDC.API\\obj\\",
+        "outputPath": "C:\\ProyectosTesla\\TeslaACDC\\TeslaACDC.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "c:\\ProyectosTesla\\TeslaACDC\\TeslaACDC.Business\\TeslaACDC.Business.csproj": {
-                "projectPath": "c:\\ProyectosTesla\\TeslaACDC\\TeslaACDC.Business\\TeslaACDC.Business.csproj"
+              "C:\\ProyectosTesla\\TeslaACDC\\TeslaACDC.Business\\TeslaACDC.Business.csproj": {
+                "projectPath": "C:\\ProyectosTesla\\TeslaACDC\\TeslaACDC.Business\\TeslaACDC.Business.csproj"
               },
               "C:\\ProyectosTesla\\TeslaACDC\\TeslaACDC.Data\\TeslaACDC.Data.csproj": {
                 "projectPath": "C:\\ProyectosTesla\\TeslaACDC\\TeslaACDC.Data\\TeslaACDC.Data.csproj"
@@ -57,6 +57,10 @@
               "target": "Package",
               "version": "[9.0.1, )"
             },
+            "Microsoft.Aspnetcore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[9.0.3, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[9.0.3, )"
@@ -74,6 +78,10 @@
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.3, )"
+            },
+            "Microsoft.Extensions.identity.Core": {
               "target": "Package",
               "version": "[9.0.3, )"
             },
@@ -109,14 +117,14 @@
         }
       }
     },
-    "c:\\ProyectosTesla\\TeslaACDC\\TeslaACDC.Business\\TeslaACDC.Business.csproj": {
+    "C:\\ProyectosTesla\\TeslaACDC\\TeslaACDC.Business\\TeslaACDC.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\ProyectosTesla\\TeslaACDC\\TeslaACDC.Business\\TeslaACDC.Business.csproj",
+        "projectUniqueName": "C:\\ProyectosTesla\\TeslaACDC\\TeslaACDC.Business\\TeslaACDC.Business.csproj",
         "projectName": "TeslaACDC.Business",
-        "projectPath": "c:\\ProyectosTesla\\TeslaACDC\\TeslaACDC.Business\\TeslaACDC.Business.csproj",
+        "projectPath": "C:\\ProyectosTesla\\TeslaACDC\\TeslaACDC.Business\\TeslaACDC.Business.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "c:\\ProyectosTesla\\TeslaACDC\\TeslaACDC.Business\\obj\\",
+        "outputPath": "C:\\ProyectosTesla\\TeslaACDC\\TeslaACDC.Business\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -154,6 +162,28 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.3, )"
+            },
+            "Microsoft.Extensions.Identity.core": {
+              "target": "Package",
+              "version": "[9.0.3, )"
+            },
+            "Microsoft.IdentityModel": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[8.7.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[8.7.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -216,6 +246,14 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "Microsoft.Aspnetcore.Identity": {
+              "target": "Package",
+              "version": "[2.3.1, )"
+            },
+            "Microsoft.Aspnetcore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.3, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[9.0.3, )"

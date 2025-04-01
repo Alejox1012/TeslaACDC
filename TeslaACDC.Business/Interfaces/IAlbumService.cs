@@ -9,7 +9,9 @@ public interface IAlbumService
 
     
    Task<BaseMessage<Album>> FindAlbumById(int id);
+   Task<BaseMessage<Album>> FindById(int id);
    Task<BaseMessage<Album>> AddAlbum(Album album);
+
 
     /*
     Task<List<Album>> GetAlbumsList(); // Obtiene toda la lista de álbumes
@@ -31,7 +33,6 @@ public interface IAlbumService
     #region Learning to Test
     Task<string>HealthCheckTest();
     Task<string>TestAlbumCreation(Album album);
-
 
     #endregion
 
