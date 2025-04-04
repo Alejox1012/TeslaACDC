@@ -1,6 +1,7 @@
 using System.Net;
 using Microsoft.VisualBasic;
 using TeslaACDC.Business.Interfaces;
+using TeslaACDC.Data;
 using TeslaACDC.Data.IRepository;
 using TeslaACDC.Data.Models;
 using TeslaACDC.Data.Repository;
@@ -11,6 +12,21 @@ namespace TeslaACDC.Business.Services;
 
 public class AlbumService : IAlbumService
 {
+
+     //private IArtistRepository<int, Artist> _artistRepository;
+    private readonly IUnitOfWork _unitOfWork;
+    private List<Album> _listaAlbum = new();
+
+    public AlbumService(IUnitOfWork unitOfWork)
+    {
+        _unitOfWork = unitOfWork;
+        //_artistRepository = artistRepository;
+        //_artistRepository = new ArtistRepository<int, Artist>(_context);
+    }
+
+
+
+
     private readonly IAlbumRepository<int, Album> _albumRepository;
 
     public AlbumService(IAlbumRepository<int, Album> albumRepository)
@@ -18,6 +34,19 @@ public class AlbumService : IAlbumService
         _albumRepository = albumRepository;
     }
 
+   
+
+   
+    public async Task<BaseMessage<Album>>GetAlbumList()
+    {
+        var lista = await _unitOfWork.AlbumRepository.GetAllAsync();
+        return lista.Any() ? 
+            BuildResponse(lista.ToList(), "Album found", HttpStatusCode.OK, lista.Count()) : 
+            BuildResponse(lista.ToList(), "Album not found", HttpStatusCode.NotFound, 0);
+
+    }
+
+   
 
 
     public async Task<BaseMessage<Album>> AddAlbum(Album album)

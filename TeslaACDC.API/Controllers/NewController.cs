@@ -7,7 +7,7 @@ namespace TeslaACDC.API.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-[Authorize]
+//[Authorize]
 public class NewController : ControllerBase
 {
     private readonly IArtistService _artistService;
@@ -126,6 +126,18 @@ public class NewController : ControllerBase
             var result = await _artistService.FindArtistByProperties(name, country);
             return StatusCode((int)result.StatusCode, result);
         }
+
+    //Album
+
+    // Get Artist List
+        [HttpGet]
+        [Route("GetAllAlbums")]
+        public async Task<IActionResult> GetAlbumList()
+        {
+            var result = await _albumService.GetAlbumList();
+            return StatusCode((int)result.StatusCode, result);
+        }
+
 
 
 

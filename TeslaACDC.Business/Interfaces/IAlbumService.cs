@@ -6,11 +6,14 @@ namespace TeslaACDC.Business.Interfaces;
 
 public interface IAlbumService
 {
-
+   
+   
     
+   Task<BaseMessage<Album>> GetAlbumList();
    Task<BaseMessage<Album>> FindAlbumById(int id);
    Task<BaseMessage<Album>> FindById(int id);
    Task<BaseMessage<Album>> AddAlbum(Album album);
+
 
 
     /*

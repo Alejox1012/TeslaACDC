@@ -7,5 +7,9 @@ meta {
 get {
   url: http://localhost:5204/api/Tesla/GetAlbumsList
   body: none
-  auth: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoibHVjaG8iLCJqdGkiOiI2ZGM1MDIzMC1hNzU3LTQ5NjUtYWZlMy05MWJhZGE0YTIyZjAiLCJleHAiOjE3NDQxNTI3ODQsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTIwNCIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTIwNCJ9.rY_Yj8fuPsz62dFZ_YwkpYVQ7ELdpnRFNbu0ZiHfEZc
 }

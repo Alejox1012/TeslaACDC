@@ -28,12 +28,6 @@ builder.Services.AddEndpointsApiExplorer();
 // Inyeccion de dependencias
 
 
-builder.Services.AddScoped<IAlbumRepository<int, Album>, AlbumRepository<int, Album>>();
-builder.Services.AddScoped<IAlbumService>(provider =>
-{
-    var albumRepo = provider.GetRequiredService<IAlbumRepository<int, Album>>();
-    return new AlbumService(albumRepo);
-});
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IAlbumService, AlbumService>();
 builder.Services.AddScoped<IArtistService, ArtistService>();

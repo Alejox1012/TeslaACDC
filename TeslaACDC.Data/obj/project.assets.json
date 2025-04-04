@@ -4073,11 +4073,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\ProyectosTesla\\TeslaACDC\\TeslaACDC.Data\\TeslaACDC.Data.csproj",
+      "projectUniqueName": "C:\\ProyectosTesla\\TeslaACDC-Backend-Net\\TeslaACDC.Data\\TeslaACDC.Data.csproj",
       "projectName": "TeslaACDC.Data",
-      "projectPath": "C:\\ProyectosTesla\\TeslaACDC\\TeslaACDC.Data\\TeslaACDC.Data.csproj",
+      "projectPath": "C:\\ProyectosTesla\\TeslaACDC-Backend-Net\\TeslaACDC.Data\\TeslaACDC.Data.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\ProyectosTesla\\TeslaACDC\\TeslaACDC.Data\\obj\\",
+      "outputPath": "C:\\ProyectosTesla\\TeslaACDC-Backend-Net\\TeslaACDC.Data\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
